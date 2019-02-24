@@ -38,28 +38,28 @@ const TabNavigator = createBottomTabNavigator({
   Record: RecordScreen,
   Settings: SettingsScreen,
 }, {
-  defaultNavigationOptions: ({ navigation }) => ({
-    tabBarIcon: ({ focused, horizontal, tintColor }) => {
-      const { routeName } = navigation.state;
-      let IconComponent = Ionicons;
-      let iconName;
-      if (routeName === 'Home') {
-        iconName = `home`;
-      } else if (routeName === 'Record') {
-        iconName = `microphone`;
-      } else if (routeName === 'Settings') {
-        iconName = `sliders`;
-      }
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === 'Home') {
+          iconName = `home`;
+        } else if (routeName === 'Record') {
+          iconName = `microphone`;
+        } else if (routeName === 'Settings') {
+          iconName = `sliders`;
+        }
 
-      // You can return any component that you like here!
-      return <IconComponent name={iconName} size={20} color={tintColor} />;
+        // You can return any component that you like here!
+        return <IconComponent name={iconName} size={20} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: '#3b484a',
+      inactiveTintColor: '#b6b4b4',
     },
-  }),
-  tabBarOptions: {
-    activeTintColor: '#3b484a',
-    inactiveTintColor: '#b6b4b4',
-  },
-});
+  });
 
 export default createAppContainer(TabNavigator);
 
